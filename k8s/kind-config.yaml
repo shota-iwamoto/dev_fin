@@ -1,0 +1,12 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: dev-finace
+nodes:
+  - role: control-plane
+    extraMounts:
+      - hostPath: /Users/test/Desktop/dev_finace/app/src
+        containerPath: /host-src
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 8080
+        protocol: TCP
